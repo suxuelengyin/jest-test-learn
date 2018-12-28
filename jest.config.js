@@ -1,3 +1,3 @@
 module.exports={
-    testResultsProcessor:'./process.js'
+    testResultsProcessor:'./testResult'
 }

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "jest learn",
   "dependencies": {
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "mime": "^2.4.0"
   },
   "devDependencies": {
     "react-scripts": "^2.1.2",

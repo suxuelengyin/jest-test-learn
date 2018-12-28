@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    
+    <script>
+        fetch("http://localhost:4000/index.js", {
+            headers: {
+                'content-type': 'application/json'
+            },
+        }).then(res => {
+            console.log(res);
+            return res.json()
+        })
+            .then((data) => {
+                console.log(data);
+                
+            })
+    </script>
+</body>
+
+</html>
