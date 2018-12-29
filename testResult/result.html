@@ -24,11 +24,11 @@
         }
     </style>
     <div id="app">
-        <div v-for={}>
-            <h3></h3>
+        <div v-for="(item,index) in testResults">
+            <h3>{{item.testResults[0].fullName}}</h3>
             <pre class="code">
-            <code style=" font-family: Consolas, Menlo, monospace;">
-               {{testResults[0].failureMessage}}
+            <code style=" font-family: Consolas, Menlo, monospace;" v-for="(minitem,minindex) in item.testResults">
+               {{item.failureMessage?item.failureMessage:minitem.status}}
             </code>
         </pre>
         </div>
