@@ -4,8 +4,9 @@ var path = require("path");
 var server = new http.Server();
 var fs = require('fs')
 var {exec}=require('child_process')
+var deal=require('./result')
 function test(result) {
-    console.log(result);
+    console.log(result.testResults[0].testResults);
     server.on('request', function (req, res) {
         console.log(req.method);
         var urlObj = url.parse(req.url);
@@ -32,15 +33,15 @@ function test(result) {
             })
         } else {
             res.writeHead(200, { 'Content-Type': 'aplication/json' })
-            res.end(JSON.stringify(result))
-            server.close()
+            res.end(JSON.stringify(deal(result)))
+            // server.close()
             console.log('byr');
             
         }
     })
     server.listen(4000, function () {
         console.log("运行在：http://localhost:4000");
-        exec('start http://localhost:4000')
+        exec('start http://localhost:4000');
 
     })
     return result

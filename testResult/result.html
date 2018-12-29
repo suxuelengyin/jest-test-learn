@@ -6,10 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.bootcss.com/vue/2.5.21/vue.js"></script>
 </head>
 
 <body>
-    
+    <style>
+        .code {
+            display: block;
+            padding: 0.5em;
+            font-size: 12px;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            border-radius: 0.25rem;
+            background-color: rgba(206, 17, 38, 0.05);
+        }
+    </style>
+    <div id="app">
+        <div v-for={}>
+            <h3></h3>
+            <pre class="code">
+            <code style=" font-family: Consolas, Menlo, monospace;">
+               {{testResults[0].failureMessage}}
+            </code>
+        </pre>
+        </div>
+    </div>
     <script>
         fetch("http://localhost:4000/index.js", {
             headers: {
@@ -18,11 +41,19 @@
         }).then(res => {
             console.log(res);
             return res.json()
+        }).then((data) => {
+            console.log(data);
+            render(data)
         })
-            .then((data) => {
-                console.log(data);
-                
+        function render(data) {
+            var vm = new Vue({
+                el: "#app",
+                data: data,
+                mounted() {
+
+                },
             })
+        }
     </script>
 </body>
 

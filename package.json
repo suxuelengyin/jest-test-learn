@@ -4,7 +4,8 @@
   "description": "jest learn",
   "dependencies": {
     "jest": "^23.6.0",
-    "mime": "^2.4.0"
+    "mime": "^2.4.0",
+    "strip-ansi": "^5.0.0"
   },
   "devDependencies": {
     "react-scripts": "^2.1.2",
